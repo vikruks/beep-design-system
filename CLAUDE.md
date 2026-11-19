@@ -30,6 +30,10 @@ Beep! is a React Native design system shown in a web Storybook through `@storybo
 - **Disabled:** the whole element gets opacity `theme.state.disabled.opacity`, and it doesn't respond to presses.
 - Put the opacity on the outer element (for example, the `Pressable` style callback `({ pressed }) => ...`), not on its children.
 
+### Accessibility
+- Use the ARIA props (`role`, `aria-label`, `aria-disabled`, `aria-busy`, `aria-hidden`). They work on iOS, Android and web, but react-native-web ignores `accessibilityState.busy` and `accessibilityElementsHidden`.
+- Don't pass `disabled` to `Pressable` for loading: it makes screen readers say "dimmed". Ignore the press instead and set `aria-busy`.
+
 ### iOS first
 - Design and check for iOS first. The web is the preview.
 - **Don't set `fontFamily` on iOS**, so the system font (SF Pro) is used.
