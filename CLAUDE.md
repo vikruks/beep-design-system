@@ -46,6 +46,12 @@ src/components/Button/
 └── Button.stories.tsx  # Storybook stories
 ```
 
+## Docs pages
+
+- Foundations pages (Colors, Typography, Spacing, Radius, Motion) live in `src/docs/foundations/*.mdx`. They're built from `theme.ts` by the blocks in `src/docs/blocks/`, so they update by themselves when tokens change.
+- Layout values that only the docs pages use go in `docs` in `src/docs/blocks/shared.tsx`, never in the theme.
+- Web font fallback is `-apple-system, Inter, system-ui`. Inter is loaded from Google Fonts in `.storybook/preview-head.html`.
+
 ## Stories
 
 - Every Figma component description has a line that starts with **`Stories:`**. Write exactly the stories that line lists, with the same names and in the same order.

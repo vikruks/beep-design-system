@@ -37,7 +37,7 @@ import { vehicleCardTokens } from './components/vehicle-card';
 
 /** iOS: no fontFamily, so the system font (SF Pro) is used. Web preview: the system font stack. */
 const systemFontFamily = Platform.select<string | undefined>({
-  web: '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
+  web: '-apple-system, Inter, system-ui',
   default: undefined,
 });
 

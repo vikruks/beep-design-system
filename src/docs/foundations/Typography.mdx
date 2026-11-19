@@ -1,0 +1,12 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import { TypographyScale } from '../blocks/TypographyScale';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Text styles from `theme.typography`, each rendered with its own size, line height, weight and letter spacing. On iOS the system font (SF Pro) is used. The web preview falls back to `-apple-system, Inter, system-ui`. Spread a style into a `Text` style: `{ ...theme.typography.bodyLg, color: theme.color.text.primary }`.
+
+<Unstyled>
+  <TypographyScale />
+</Unstyled>

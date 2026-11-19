@@ -14,7 +14,7 @@
  *   - `.../opacity` values are divided by 100 (80 → 0.8).
  *   - `border-width/separator` becomes `StyleSheet.hairlineWidth`.
  *   - fontWeight is emitted as a string ('600'), as React Native expects.
- *   - fontFamily "SF Pro" is left unset on iOS (system font) and uses the system font stack on web.
+ *   - fontFamily "SF Pro" is left unset on iOS (system font); on web it falls back to -apple-system, Inter, system-ui.
  *   - Easing strings ("0.2, 0, 0, 1") become number arrays for Easing.bezier.
  *   - Numbers are rounded to 3 decimals to remove Figma float noise.
  *   - Collections with several modes get one key per mode: componentSize.icon['16'].size.
@@ -66,7 +66,7 @@ const SIZE_COLLECTIONS: Record<string, string> = {
   'Icon Size': 'icon',
 };
 
-const WEB_SYSTEM_FONT = '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif';
+const WEB_SYSTEM_FONT = '-apple-system, Inter, system-ui';
 
 /** Which component file a Component-collection variable belongs to, from its Figma name. */
 function componentGroup(name: string): string {
