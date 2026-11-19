@@ -6,4 +6,9 @@ export const indicatorTokens = {
       dot: '#e02020',
     },
   },
+  sizing: {
+    indicator: {
+      dot: 8,
+    },
+  },
 } as const;

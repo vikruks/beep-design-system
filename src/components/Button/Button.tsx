@@ -1,20 +1,16 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 import { AccessibilityInfo, ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Icon, type IconName } from '../../icons/Icon';
 import { tokens } from './Button.tokens';
 
 export type ButtonVariant = keyof typeof tokens.variant;
 export type ButtonState = 'default' | 'pressed' | 'disabled' | 'loading';
 
-/**
- * Leading icon. Pass a node, or a function that receives the variant's content colour and the icon size.
- * Will become `IconName` once the Icon component exists.
- */
-export type ButtonIcon = ReactNode | ((props: { color: string; size: number }) => ReactNode);
-
 export type ButtonViewProps = {
   variant?: ButtonVariant;
   label: string;
-  icon?: ButtonIcon;
+  /** Leading Icon/20, drawn in the variant's content colour. */
+  icon?: IconName;
   state?: ButtonState;
 };
 
@@ -26,18 +22,17 @@ export type ButtonProps = Omit<ButtonViewProps, 'state'> & {
 
 /**
  * Draws the button in one given state. Has no behaviour, so it works in a states grid.
- * Pressed and Disabled keep the Default colours and change only the opacity of the whole element.
+ * Pressed and Disabled keep the Default colours and change only the opacity of the whole element
+ * (state.pressed.opacity, state.disabled.opacity).
  */
 export function ButtonView({ variant = 'primary', label, icon, state = 'default' }: ButtonViewProps) {
   const colors = tokens.variant[variant];
   const leading =
     state === 'loading' ? (
       <ActivityIndicator size="small" color={colors.spinner} />
-    ) : typeof icon === 'function' ? (
-      icon({ color: colors.content, size: tokens.iconSize })
-    ) : (
-      icon
-    );
+    ) : icon ? (
+      <Icon name={icon} size={tokens.iconSize} color={colors.content} accentColor={colors.content} />
+    ) : null;
 
   return (
     <View
@@ -63,7 +58,7 @@ export function ButtonView({ variant = 'primary', label, icon, state = 'default'
 
 /**
  * Button for screen actions: main and supporting actions.
- * Icon only → Icon Button. Small inline action → Button/Compact. Partner brand → Button/Branded.
+ * Icon only → Icon Button. Small action in a card → Chip/Action (Size SM). Partner brand → Button/Branded.
  *
  * @example <Button variant="primary" label="Pay" loading onPress={pay} />
  */

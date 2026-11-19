@@ -10,6 +10,11 @@ export const iconContainerTokens = {
     },
   },
   size: {
+    '20': {
+      size: 20,
+      radius: 4,
+      statusIconSize: 12,
+    },
     '36': {
       size: 36,
       radius: 8,

@@ -7,7 +7,6 @@ import { buttonTokens } from './components/button';
 import { checkboxTokens } from './components/checkbox';
 import { chipTokens } from './components/chip';
 import { commonTokens } from './components/common';
-import { compactButtonTokens } from './components/compact-button';
 import { counterTokens } from './components/counter';
 import { footerTokens } from './components/footer';
 import { iconTokens } from './components/icon';
@@ -376,7 +375,6 @@ export const theme = {
         iconButton: iconButtonTokens.color.action.iconButton,
         tertiary: buttonTokens.color.action.tertiary,
         destructive: buttonTokens.color.action.destructive,
-        compact: compactButtonTokens.color.action.compact,
       },
       radio: radioTokens.color.radio,
       switch: switchTokens.color.switch,
@@ -421,6 +419,7 @@ export const theme = {
       button: buttonTokens.sizing.button,
       field: textFieldTokens.sizing.field,
       badge: badgeTokens.sizing.badge,
+      indicator: indicatorTokens.sizing.indicator,
     },
     space: {
       button: buttonTokens.space.button,

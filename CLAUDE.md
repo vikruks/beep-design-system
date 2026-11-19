@@ -50,6 +50,13 @@ src/components/Button/
 └── Button.stories.tsx  # Storybook stories
 ```
 
+## Icons
+
+- Icons live in `src/icons/`: `icons.ts` holds SVGs exported from the Figma icon set, and `Icon.tsx` draws them with `react-native-svg`. Components take `icon: IconName`.
+- In two-tone icons, `{primary}` replaces the white parts and `{accent}` the yellow parts, so `Icon` can recolour them (`color`, `accentColor`). Brand icons (`fixed: true`) keep their colours.
+- To add an icon, export its Figma component as SVG, swap white and yellow for the placeholders, and add it under its Figma name.
+- `.storybook/main.ts` sets `shimMissingExports` for dependency pre-bundling, because react-native-svg's web code imports an Android-only module. Don't remove it.
+
 ## Docs pages
 
 - Foundations pages (Colors, Typography, Spacing, Radius, Motion) live in `src/docs/foundations/*.mdx`. They're built from `theme.ts` by the blocks in `src/docs/blocks/`, so they update by themselves when tokens change.

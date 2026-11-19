@@ -12,9 +12,12 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
+    "@react-native/assets-registry": "^0.88.1",
+    "@react-navigation/native": "^7.5.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-native": "^0.88.1",
+    "react-native-svg": "^15.16.1",
     "react-native-web": "^0.21.4"
   },
   "devDependencies": {
