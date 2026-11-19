@@ -7,6 +7,7 @@ Beep! is a React Native design system shown in a web Storybook through `@storybo
 - `npm run storybook`: start Storybook at http://localhost:6006
 - `npm run typecheck`: TypeScript check
 - `npm run build-storybook`: static build into `storybook-static/`
+- `npm run tokens`: regenerate `src/tokens/theme.ts` and `src/tokens/components/*.ts` from `src/tokens/tokens.json`
 
 ## Rules
 
@@ -21,6 +22,8 @@ Beep! is a React Native design system shown in a web Storybook through `@storybo
 - **Every value comes from a token.** Don't hard-code colours, spacing, sizes, radii, font sizes, line heights, opacities or durations in components.
 - System-wide values come from the theme in `src/tokens/`. Values specific to one component go in its `Component.tokens.ts`, and those values refer to theme tokens. They don't contain raw numbers or hex codes.
 - If a value you need has no token, add the token. Don't inline the value.
+- `src/tokens/tokens.json` is exported from the Figma variables, with aliases resolved and the Primitives collection skipped. `theme.ts` and `components/*.ts` are generated from it by `scripts/build-tokens.ts`. **Never edit generated files by hand:** change `tokens.json` or the script, then run `npm run tokens`.
+- Use the Figma code syntax names: `theme.color.text.primary`, `theme.component.color.radio.borderSelected`, `theme.componentSize.button.Large.height`.
 
 ### States
 - **Pressed:** the whole element gets opacity `theme.state.pressed.opacity`. Don't change colours per part.
