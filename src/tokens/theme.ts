@@ -49,25 +49,16 @@ export const theme = {
     status: {
       error: {
         base: '#e02020',
-        bgStrong: '#e02020',
-        bgLight: '#fadbdb',
-        text: '#131518',
         icon: '#e02020',
         bgSubtle: 'rgba(224, 32, 32, 0.15)',
       },
       success: {
         base: '#6dd400',
-        bgStrong: '#6dd400',
-        bgLight: '#e8f8d6',
-        text: '#131518',
         icon: '#6dd400',
         bgSubtle: 'rgba(109, 212, 0, 0.15)',
       },
       warning: {
         base: '#fa7500',
-        bgStrong: '#fa7500',
-        bgLight: '#ffe4cf',
-        text: '#131518',
         icon: '#fa7500',
         bgSubtle: 'rgba(250, 117, 0, 0.15)',
       },

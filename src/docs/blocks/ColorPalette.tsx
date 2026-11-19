@@ -4,7 +4,7 @@ import { docs, flatten, Section, TokenName, TokenValue, tokenPath } from './shar
 
 const DESCRIPTIONS: Record<string, string> = {
   brand: 'The Beep! accent.',
-  status: 'Feedback colours: base, strong and light backgrounds, text and icon.',
+  status: 'Feedback colours: base, subtle background and icon.',
   background: 'Screen backgrounds.',
   surface: 'Layers above the background: cards, sheets, bars and highlights.',
   border: 'Outlines and dividers on components.',
