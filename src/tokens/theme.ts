@@ -100,9 +100,7 @@ export const theme = {
       accent: '#f7b500',
       link: '#f7b500',
       error: '#e02020',
-      disabled: 'rgba(255, 255, 255, 0.38)',
-      onAction: '#131518',
-      onActionDisabled: 'rgba(19, 21, 24, 0.4)',
+      onAccent: '#131518',
       critical: '#e02020',
     },
     icon: {
